@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dechen Dolma Sherpa — Environmental Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Animated background canvas (leaves + particles) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Cursor follower -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#home" class="nav-logo">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+        <path d="M16 4 C 10 10, 6 16, 16 28 C 26 16, 22 10, 16 4 Z" fill="currentColor" opacity="0.85"/>
+        <path d="M16 6 L 16 26" stroke="#f7f3ea" stroke-width="0.8" fill="none"/>
+      </svg>
+      <span>Dechen</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <!-- Wavy ground -->
+    <div class="hero-waves" aria-hidden="true">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path class="wave wave-1" d="M0,224L48,213.3C96,203,192,181,288,165.3C384,149,480,139,576,154.7C672,171,768,213,864,213.3C960,213,1056,171,1152,154.7C1248,139,1344,149,1392,154.7L1440,160L1440,320L0,320Z"></path>
+        <path class="wave wave-2" d="M0,256L60,240C120,224,240,192,360,197.3C480,203,600,245,720,245.3C840,245,960,203,1080,186.7C1200,171,1320,181,1380,186.7L1440,192L1440,320L0,320Z"></path>
+        <path class="wave wave-3" d="M0,288L80,272C160,256,320,224,480,224C640,224,800,256,960,266.7C1120,277,1280,267,1360,261.3L1440,256L1440,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <span class="dot-pulse"></span>
+        Environmental Scientist · Researcher
+      </div>
+      <h1 class="hero-name">
+        <span class="word">Dechen</span>
+        <span class="word">Dolma</span>
+        <span class="word">Sherpa</span>
+      </h1>
+      <p class="hero-sub">
+        Mapping the world to make it kinder.
+        <br />Geospatial analysis, disaster risk research, and community-rooted science from the foothills of the Himalayas to Leeds.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#experience">
+          <span>See my work</span>
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#contact">Say hello</a>
+      </div>
+
+      <div class="hero-scroll">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+
+    <!-- Floating leaves -->
+    <div class="floating-leaves" aria-hidden="true">
+      <svg class="leaf leaf-1" viewBox="0 0 64 64"><path d="M32 4 C 16 18, 10 36, 32 60 C 54 36, 48 18, 32 4 Z" fill="currentColor"/><path d="M32 8 L32 56" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none"/></svg>
+      <svg class="leaf leaf-2" viewBox="0 0 64 64"><path d="M32 4 C 16 18, 10 36, 32 60 C 54 36, 48 18, 32 4 Z" fill="currentColor"/><path d="M32 8 L32 56" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none"/></svg>
+      <svg class="leaf leaf-3" viewBox="0 0 64 64"><path d="M32 4 C 16 18, 10 36, 32 60 C 54 36, 48 18, 32 4 Z" fill="currentColor"/><path d="M32 8 L32 56" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none"/></svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="container two-col">
+      <div class="reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title">A scientist with mountains in her bones <span class="wiggle">🌿</span></h2>
+        <p class="lead">
+          I'm Dechen — an environmental scientist currently pursuing my M.Sc. at the University of Leeds.
+          My work sits at the intersection of <em>geospatial analysis</em>, <em>climate adaptation</em>, and the everyday lives of people most affected by environmental change.
+        </p>
+        <p>
+          Before Leeds, I spent two years at NAXA in Kathmandu, working alongside disaster risk reduction teams to turn raw field data into maps, infographics, and stories that communities and decision-makers can actually use.
+          I love untidy questions, careful data, and any excuse to be outside.
+        </p>
+        <ul class="about-pills">
+          <li>Climate Adaptation</li>
+          <li>Disaster Risk</li>
+          <li>GIS & Remote Sensing</li>
+          <li>Community Research</li>
+        </ul>
+      </div>
+      <div class="about-art reveal">
+        <div class="art-card">
+          <div class="art-blob"></div>
+          <div class="art-rings">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="art-emoji">
+            <span class="float-1">🌱</span>
+            <span class="float-2">💧</span>
+            <span class="float-3">🗻</span>
+            <span class="float-4">🍃</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section education">
+    <div class="container">
+      <p class="eyebrow reveal">Education</p>
+      <h2 class="section-title reveal">Where I've been learning</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="t-head">
+              <h3>University of Leeds</h3>
+              <span class="t-date">2025 — Present</span>
+            </div>
+            <p class="t-role">M.Sc. — Environmental Science</p>
+            <p class="t-loc">Leeds, United Kingdom</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="t-head">
+              <h3>Kathmandu University</h3>
+              <span class="t-date">2019 — 2024</span>
+            </div>
+            <p class="t-role">B.Sc. — Environmental Science · CGPA 3.19</p>
+            <p class="t-loc">Kathmandu, Nepal</p>
+            <p class="t-note">Final Year Project: Analysis of the Urban Heat Island Effect in Bharatpur Metropolitan City</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="t-head">
+              <h3>Uniglobe Secondary School</h3>
+              <span class="t-date">2017 — 2019</span>
+            </div>
+            <p class="t-role">+2 Science · CGPA 2.65</p>
+            <p class="t-loc">Kathmandu, Nepal</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="t-head">
+              <h3>Trungram International Academy</h3>
+              <span class="t-date">2017</span>
+            </div>
+            <p class="t-role">S.E.E — NEB Board · CGPA 3.45</p>
+            <p class="t-loc">Kathmandu, Nepal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <p class="eyebrow reveal">Skills</p>
+      <h2 class="section-title reveal">My toolkit</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon">🗺️</div>
+          <h3>QGIS</h3>
+          <p>Spatial analysis, mapping, and field data visualisation.</p>
+          <div class="skill-bar"><span style="--w:92%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🛰️</div>
+          <h3>ArcGIS</h3>
+          <p>Geoprocessing, modelling, and cartographic design.</p>
+          <div class="skill-bar"><span style="--w:85%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🌍</div>
+          <h3>ERDAS Imagine</h3>
+          <p>Remote sensing and satellite image analysis.</p>
+          <div class="skill-bar"><span style="--w:78%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">📋</div>
+          <h3>Kobo Toolbox</h3>
+          <p>Designing surveys for field data collection.</p>
+          <div class="skill-bar"><span style="--w:90%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🐍</div>
+          <h3>Python</h3>
+          <p>Basic scripting for data analysis and automation.</p>
+          <div class="skill-bar"><span style="--w:55%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">📊</div>
+          <h3>Microsoft Office</h3>
+          <p>Outlook, Excel, Word, PowerPoint — the everyday essentials.</p>
+          <div class="skill-bar"><span style="--w:88%"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section experience">
+    <div class="container">
+      <p class="eyebrow reveal">Experience</p>
+      <h2 class="section-title reveal">Where my work has lived</h2>
+
+      <div class="exp-list">
+        <article class="exp-card reveal">
+          <header>
+            <div>
+              <h3>Research Associate</h3>
+              <p class="exp-org">NAXA Pvt. Ltd.</p>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-date">Sept 2024 — Apr 2025</span>
+              <span class="exp-loc">Kathmandu, Nepal</span>
+            </div>
+          </header>
+          <ul>
+            <li>Conducted research and data analysis to support Household Level Disaster Risk Management Plans (HDRMPs), risk communication campaigns, and data digitization campaigns.</li>
+            <li>Collaborated with project and technical teams to implement the DASTAA platform.</li>
+            <li>Assisted in preparing the Monitoring, Evaluation, and Learning (MEL) report.</li>
+            <li>Used field-level data to generate infographics and analytics that supported the project's objectives.</li>
+            <li>Contributed to milestone reports, monthly progress reports (MPRs), and final reports.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card reveal">
+          <header>
+            <div>
+              <h3>Research Assistant</h3>
+              <p class="exp-org">NAXA Pvt. Ltd.</p>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-date">Apr 2024 — Sept 2024</span>
+              <span class="exp-loc">Kathmandu, Nepal</span>
+            </div>
+          </header>
+          <ul>
+            <li>Assisted the DRR & CCA team in profiling vulnerable and marginalised populations to support inclusive disaster management strategies.</li>
+            <li>Conducted research and analysis to support development and refinement of the DASTAA platform — vulnerability assessments, hazard mapping, infographics, and risk visualisation.</li>
+            <li>Generated questionnaires in Kobo Toolbox for field surveys.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card reveal">
+          <header>
+            <div>
+              <h3>DRR Intern</h3>
+              <p class="exp-org">NAXA Pvt. Ltd.</p>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-date">Feb 2024 — Apr 2024</span>
+              <span class="exp-loc">Kathmandu, Nepal</span>
+            </div>
+          </header>
+          <ul>
+            <li>Worked with the program team on the implementation of the ACT-FIRST and DASTAA projects.</li>
+            <li>Monitored data collection activities in the field.</li>
+            <li>Maintained organised records of field-based activities, workshops, and meeting minutes.</li>
+            <li>Assisted in facilitating workshops and events.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section certs">
+    <div class="container">
+      <p class="eyebrow reveal">Certifications</p>
+      <h2 class="section-title reveal">Always learning</h2>
+      <div class="cert-grid">
+        <div class="cert-card reveal">
+          <div class="cert-icon">🎓</div>
+          <p class="cert-org">ICIMOD</p>
+          <h3>Empowering Women in Geospatial Information Technology</h3>
+          <span class="cert-year">2024 Edition</span>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon">📈</div>
+          <p class="cert-org">Coursera</p>
+          <h3>Data Analysis with Python</h3>
+          <span class="cert-year">2024</span>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon">🗺️</div>
+          <p class="cert-org">Modern GIS</p>
+          <h3>QGIS — Free YouTube Certification</h3>
+          <span class="cert-year">2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title">Let's build something for the planet.</h2>
+      <p class="lead">
+        I'm always up for a chat — research collaborations, GIS work, climate writing, or just trading book recommendations.
+      </p>
+      <div class="contact-cards">
+        <a class="contact-card" href="mailto:dechendsherpa@gmail.com">
+          <div class="cc-icon">✉️</div>
+          <span class="cc-label">Email</span>
+          <span class="cc-value">dechendsherpa@gmail.com</span>
+        </a>
+        <a class="contact-card" href="tel:+447349650442">
+          <div class="cc-icon">📞</div>
+          <span class="cc-label">Phone</span>
+          <span class="cc-value">+44 7349 650442</span>
+        </a>
+        <a class="contact-card" href="#" target="_blank" rel="noopener">
+          <div class="cc-icon">🔗</div>
+          <span class="cc-label">LinkedIn</span>
+          <span class="cc-value">Let's connect</span>
+        </a>
+        <a class="contact-card" href="#home">
+          <div class="cc-icon">📍</div>
+          <span class="cc-label">Location</span>
+          <span class="cc-value">Leeds, United Kingdom</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 Dechen Dolma Sherpa</p>
+      <p class="footer-note">Crafted with care, leaves, and a few drops of rain.</p>
+    </div>
+    <!-- Footer waves -->
+    <div class="footer-waves" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path class="wave wave-1" d="M0,80 C 240,40 480,120 720,80 C 960,40 1200,100 1440,70 L1440,0 L0,0 Z"></path>
+        <path class="wave wave-2" d="M0,60 C 240,100 480,30 720,60 C 960,90 1200,40 1440,80 L1440,0 L0,0 Z"></path>
+      </svg>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
