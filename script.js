@@ -244,7 +244,9 @@
       if (id && id.length > 1 && document.querySelector(id)) {
         e.preventDefault();
         const target = document.querySelector(id);
-        const top = target.getBoundingClientRect().top + window.scrollY - 60;
+        const navEl = document.querySelector('.nav');
+        const navH = navEl ? navEl.getBoundingClientRect().height : 60;
+        const top = target.getBoundingClientRect().top + window.scrollY - navH - 12;
         window.scrollTo({ top, behavior: 'smooth' });
       }
     });

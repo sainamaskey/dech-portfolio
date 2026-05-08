@@ -364,7 +364,7 @@ body::before {
 
 .hero-scroll {
   position: absolute;
-  bottom: 2rem; left: 50%;
+  bottom: 230px; left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -375,7 +375,12 @@ body::before {
   text-transform: uppercase;
   color: var(--ink-soft);
   opacity: 0.6;
+  z-index: 6;
   animation: fadeIn 1.5s ease 1.5s both;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .hero-scroll { bottom: 200px; }
 }
 .scroll-line {
   width: 1px;
